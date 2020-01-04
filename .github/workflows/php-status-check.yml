@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
+      - name: Prepare testing environment
+        run: |
+          cd PHP
+          source aliases.sh
+          docker-compose build
       - name: PHPUnit
         run: |
           cd PHP
