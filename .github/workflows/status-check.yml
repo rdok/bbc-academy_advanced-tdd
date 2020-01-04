@@ -10,9 +10,11 @@ jobs:
     
     steps:
       - uses: actions/checkout@v1
-      - name: Run PHP unit tests
+        -
+      - name: PHP unit tests
         run: |
           cd PHP
           source aliases.sh
           composer install
           phpunit
+
