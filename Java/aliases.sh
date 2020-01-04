@@ -1,9 +1,21 @@
 #!/bin/bash
 
-java () {
-  docker-compose run --rm java java "$@"
+workbench() {
+  docker-compose run --rm workbench "$@"
 }
 
-javac () {
-  docker-compose run --rm java javac "$@"
+java() {
+  docker-compose run --rm workbench java "$@"
+}
+
+javac() {
+  docker-compose run --rm workbench javac "$@"
+}
+
+ant() {
+  docker-compose run --rm workbench ant "$@"
+}
+
+junit() {
+  java -cp "*:bin" org.junit.runner.JUnitCore "dev.rdok.TestSuite"
 }
