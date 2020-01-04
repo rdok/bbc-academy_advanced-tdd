@@ -5,9 +5,7 @@
 ### CI
 ```
 source aliases.sh
-
-ant
-junit
+ant test
 ```
 
 ### Tips

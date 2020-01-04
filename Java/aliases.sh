@@ -17,5 +17,5 @@ ant() {
 }
 
 junit() {
-  java -cp "*:bin" org.junit.runner.JUnitCore "dev.rdok.TestSuite"
+  java org.junit.runner.JUnitCore "dev.rdok.TestSuite"
 }

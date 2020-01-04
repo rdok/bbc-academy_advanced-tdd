@@ -1,6 +1,28 @@
-<project default="compile">
-    <target name="compile">
-        <mkdir dir="bin"/>
-        <javac srcdir="src" destdir="bin"/>
+<project>
+
+    <property name="src" value="./src"/>
+    <property name="lib" value="./lib"/>
+    <property name="classes" value="./classes"/>
+    <property name="test.class.name" value="dev.rdok.TestSuite"/>
+
+    <target name="test">
+        <mkdir dir="${classes}"/>
+
+        <javac includeantruntime="false" srcdir="${src}" destdir="${classes}">
+            <classpath refid="test.classpath"/>
+        </javac>
+
+        <junit fork="yes" haltonfailure="yes">
+            <test name="${test.class.name}"/>
+            <formatter type="plain" usefile="false"/>
+            <classpath refid="test.classpath"/>
+        </junit>
     </target>
+
+    <path id="test.classpath">
+        <pathelement location="${classes}"/>
+        <fileset dir="${lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
 </project>
