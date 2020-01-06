@@ -8,14 +8,16 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-public class MainTest {
+public class MainTest
+{
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
     private final PrintStream originalErr = System.err;
 
     @Test
-    public void should_print_welcoming_message() {
+    public void should_print_welcoming_message()
+    {
         String[] args = {};
 
         Main.main(args);
@@ -24,13 +26,15 @@ public class MainTest {
     }
 
     @Before
-    public void setUpStreams() {
+    public void setUpStreams()
+    {
         System.setOut(new PrintStream(outContent));
         System.setErr(new PrintStream(errContent));
     }
 
     @After
-    public void restoreStreams() {
+    public void restoreStreams()
+    {
         System.setOut(originalOut);
         System.setErr(originalErr);
     }
