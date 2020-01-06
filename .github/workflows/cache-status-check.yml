@@ -1,9 +1,9 @@
-name: php-status-check
+name: java-status-check
 
 on:
   push:
     paths:
-      - 'PHP/**'
+      - '01-cache/**'
       - '.github/**'
 
 jobs:
@@ -13,12 +13,11 @@ jobs:
       - uses: actions/checkout@v1
       - name: Prepare testing environment
         run: |
-          cd PHP
+          cd 01-cache
           source aliases.sh
           docker-compose build
-      - name: PHPUnit
+      - name: Run tests
         run: |
-          cd PHP
+          cd 01-cache
           source aliases.sh
-          composer install
-          phpunit
+          ant test
