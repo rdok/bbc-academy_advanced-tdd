@@ -1,3 +1,5 @@
+![Java Status Check](https://github.com/rdok/bbc-academy_advanced-tdd/workflows/java-status-check/badge.svg)
+
 ### Development
 
 ### CI

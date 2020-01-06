@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'PHP/**'
+      - '.github/**'
 
 jobs:
   build:
