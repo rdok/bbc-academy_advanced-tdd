@@ -25,9 +25,10 @@ public class WeatherClient implements ClientAdapter
             Day.MONDAY
         );
 
-        return this.fileCacher.has(key)
-            ? this.fileCacher.get(key)
-            : this.fileCacher.put(key, this.fetchSummary());
+        return this.fetchSummary();
+//        return this.fileCacher.has(key)
+//            ? this.fileCacher.get(key)
+//            : this.fileCacher.put(key, this.fetchSummary());
 
     }
 

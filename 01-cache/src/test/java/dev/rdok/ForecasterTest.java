@@ -4,9 +4,6 @@ import com.weather.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * integration: contract test.
- */
 public class ForecasterTest
 {
     @Test

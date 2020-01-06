@@ -7,8 +7,6 @@ public class FileCacher
 {
     public String cache(String key, Runnable callback)
     {
-        String value = callback.run();
-
         return null;
     }
 }
